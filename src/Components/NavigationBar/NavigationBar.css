@@ -1,0 +1,16 @@
+@import url("https://use.typekit.net/seg5rdg.css");
+
+.loginButton {
+    background: #413EFB;
+    border: #413EFB;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-family: all-round-gothic, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.loginButton:hover {
+    background: #5452ff;
+    border: #5452ff;
+}
