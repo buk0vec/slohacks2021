@@ -20,7 +20,7 @@ const auth = app.auth()
 const db = app.firestore()
 const functions = app.functions("us-central1")
 
-functions.useEmulator('localhost', 5005);
+// functions.useEmulator('localhost', 5005);
 
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
