@@ -20,6 +20,8 @@ function Home() {
         })
     }, [])
 
+    console.log(user);
+
     return (
         <>
             <NavigationBar
