@@ -55,7 +55,7 @@ const spotifyFunctionTest = async () => {
   hello({playlistid: "7AGiEZJ4McYRYF8v7D3cfD"})
   .then((result) => {
     console.log("res:", result.data)
-    console.log("songs:", result.data.songs)
+    console.log("songs:", result.data.titles)
   })
   .catch((err) => {
     console.log("big err", err.res)
