@@ -14,3 +14,10 @@
     background: #5452ff;
     border: #5452ff;
 }
+
+.profPic {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    border-radius: 50%;
+}

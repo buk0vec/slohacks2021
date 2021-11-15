@@ -1,6 +1,8 @@
+import React from "react";
 import { Navbar, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "./../../assets/logo.png";
+import firebase from "firebase/compat";
 import "./NavigationBar.css"
 
 export default function NavigationBar(props) {
@@ -17,9 +19,16 @@ export default function NavigationBar(props) {
                         />
                     </Navbar.Brand>
                 </Link>
-                {!props.signedIn ? <Navbar.Collapse className="justify-content-end">
-                    <Button className="loginButton">Log In</Button>
-                </Navbar.Collapse> : null}
+                {firebase.auth().currentUser ? (
+                    <Navbar.Collapse className="justify-content-end">
+                        <img src={firebase.auth().currentUser?.photoURL} className="profPic" alt="prof" />
+                        <p className="d-inline-block align-top">{firebase.auth().currentUser?._delegate?.displayName}</p>
+                    </Navbar.Collapse>
+                ) : (
+                    <Navbar.Collapse className="justify-content-end">
+                        <Button className="loginButton" onClick={() => props.buttonOnClick()}>Log In</Button>
+                    </Navbar.Collapse>
+                )}
             </Container>
         </Navbar>
     );
