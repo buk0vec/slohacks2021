@@ -26,7 +26,7 @@ functions.useEmulator('localhost', 5005);
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 // Sign in with google function, will create a user to if the user doesn't exist
-const signInWithGoogle = async () => {
+const signInWithGoogle = async (setUser) => {
   try {
     const res = await auth.signInWithPopup(googleProvider);
     const user = res.user;
@@ -43,7 +43,8 @@ const signInWithGoogle = async () => {
         spotifytoken: ""
       });
     }
-    console.log("User:", user)
+    console.log("User:", user);
+    return user;
   } catch (err) {
     console.error(err);
     alert(err.message);
